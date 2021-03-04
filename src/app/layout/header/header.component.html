@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<a class="navabar-brand" [routerLink]="['/']">
+<img src="../../../assets/mylogo.png" width="30" height="30" alt="">
+SRK GIThub Finder App
+</a>
+
+<div class="navbar-collapse">
+    <div class="navbar-nav ml-auto">
+        <div *ngIf='email' class="navbar-text float-left">
+            {{email}}
+        </div>
+        <a class="nav-item nav-link"[routerLink]="['/']">Home</a>
+        <a *ngIf="!email" class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/signIn']">Signin</a>
+        <a *ngIf="!email" class="nav-item nav-link" routerLinkActive="active"  [routerLink]="['signUp']">Signup</a>
+        <a *ngIf="email"class="nav-item nav-link"(click)="handleSignOut()">Logout</a>
+    </div>
+</div>
+</nav>
